@@ -433,7 +433,7 @@
       <div class="spot-meta">
         <span>🌇 Parfait au golden hour</span>
         <span>🥾 Petite montée, grande vue</span>
-        <span>💸 Gratuit</span>
+        <span>🌉 La Seine et les ponts en contrebas</span>
       </div>
     </div>
   </section>
@@ -530,9 +530,9 @@
   </section>
 
   <div class="actions">
-    <button type="button" class="btn-send" id="sendBtn">Envoyer ma réponse ✉️</button>
-    <button type="button" class="btn-copy" id="copyBtn">Ou copier le récap pour me l'envoyer ailleurs</button>
-    <p class="hint send-hint">Le bouton ouvre ton appli mail avec tout déjà écrit — tu n'as plus qu'à appuyer sur «&nbsp;envoyer&nbsp;».</p>
+    <button type="button" class="btn-send" id="sendBtn">Copier ma réponse 💬</button>
+    <button type="button" class="btn-copy" id="igBtn">Ouvrir Instagram pour l'envoyer</button>
+    <p class="hint send-hint">Un clic copie ta réponse toute prête — tu n'as plus qu'à la <strong>coller dans notre conversation Instagram</strong>&nbsp;💬</p>
   </div>
 
   <footer>Fait maison. Ça m'a pris 5 minutes, promis.</footer>
@@ -541,7 +541,8 @@
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
-  var EMAIL = 'theolucas243@gmail.com';
+  // ouvre la messagerie Instagram. Avec un @pseudo -> 'https://ig.me/m/pseudo' ouvre direct la conversation.
+  var INSTA_URL = 'https://www.instagram.com/direct/inbox/';
 
   var ACTIVITY_PHRASES = {
     balade: 'une balade avec pique-nique',
@@ -700,6 +701,16 @@
     }
   }
 
+  function copyRecap(onDone) {
+    var text = recapText();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(onDone, function () { fallbackCopy(text); onDone(); });
+    } else {
+      fallbackCopy(text);
+      onDone();
+    }
+  }
+
   document.getElementById('sendBtn').addEventListener('click', function () {
     var missing = missingParts();
     if (missing.length) {
@@ -707,28 +718,15 @@
       return;
     }
     heartsBurst();
-    var subject = 'Ma réponse pour notre sortie 🙂';
-    var url = 'mailto:' + EMAIL +
-      '?subject=' + encodeURIComponent(subject) +
-      '&body=' + encodeURIComponent(recapText());
-    showToast('Ton appli mail s’ouvre… plus qu’à envoyer !');
-    window.open(url, '_blank');
+    copyRecap(function () {
+      showToast('Réponse copiée ✨ Colle-la dans notre conversation Instagram 💬');
+    });
   });
 
-  document.getElementById('copyBtn').addEventListener('click', function () {
-    var missing = missingParts();
-    if (missing.length) {
-      showToast('Il me manque encore ' + missing.join(' et ') + ' 😉');
-      return;
-    }
-    var text = recapText();
-    function done() { showToast('Récap copié ! Envoie-le-moi où tu veux 📋'); }
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
-    } else {
-      fallbackCopy(text);
-      done();
-    }
+  document.getElementById('igBtn').addEventListener('click', function () {
+    // on copie aussi au passage, comme ça y a plus qu'à coller
+    copyRecap(function () {});
+    window.open(INSTA_URL, '_blank');
   });
 
   function fallbackCopy(text) {
