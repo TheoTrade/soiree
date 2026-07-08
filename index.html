@@ -370,6 +370,66 @@
     <p class="lede">Pour s'éviter 50 messages de logistique&nbsp;: <strong>tu</strong> choisis ce qui te va — l'activité, le jour, l'heure — et ça m'arrive direct.</p>
   </header>
 
+  <section>
+    <div class="step-label">D'abord</div>
+    <h2>On fait quoi&nbsp;?</h2>
+    <div class="choices" role="radiogroup" aria-label="Choix de l'activité">
+      <label class="choice">
+        <input type="radio" name="activity" value="balade" />
+        <span class="choice-card">
+          <span class="choice-emoji">🧺</span>
+          <span class="choice-text">
+            <span class="choice-name">Balade &amp; pique-nique</span>
+            <span class="choice-desc">Air frais, on marche, on papote</span>
+          </span>
+        </span>
+      </label>
+      <label class="choice">
+        <input type="radio" name="activity" value="restaurant" />
+        <span class="choice-card">
+          <span class="choice-emoji">🍽️</span>
+          <span class="choice-text">
+            <span class="choice-name">Restaurant</span>
+            <span class="choice-desc">On mange un truc bon, tranquille</span>
+          </span>
+        </span>
+      </label>
+      <label class="choice">
+        <input type="radio" name="activity" value="verre" />
+        <span class="choice-card">
+          <span class="choice-emoji">🍸</span>
+          <span class="choice-text">
+            <span class="choice-name">Un verre</span>
+            <span class="choice-desc">Simple, efficace, zéro pression</span>
+          </span>
+        </span>
+      </label>
+      <label class="choice">
+        <input type="radio" name="activity" value="cinema" />
+        <span class="choice-card">
+          <span class="choice-emoji">🎬</span>
+          <span class="choice-text">
+            <span class="choice-name">Cinéma</span>
+            <span class="choice-desc">Grand écran, popcorn, zéro blanc gênant</span>
+          </span>
+        </span>
+      </label>
+      <label class="choice">
+        <input type="radio" name="activity" value="autre" />
+        <span class="choice-card">
+          <span class="choice-emoji">✨</span>
+          <span class="choice-text">
+            <span class="choice-name">Autre idée</span>
+            <span class="choice-desc">Surprends-moi</span>
+          </span>
+        </span>
+      </label>
+      <div class="other-input" id="otherWrap">
+        <input type="text" id="otherText" placeholder="Dis-moi tout… c'est quoi ton idée ?" maxlength="80" aria-label="Ton idée d'activité" />
+      </div>
+    </div>
+  </section>
+
   <section class="spot" aria-label="Mon idée : la Côte Sainte-Catherine, à Rouen">
     <svg class="spot-art" viewBox="0 0 800 300" role="img" aria-label="Rouen au coucher du soleil, avec la flèche de la cathédrale qui se découpe sur le ciel">
       <defs>
@@ -434,66 +494,6 @@
         <span>🌇 Parfait au golden hour</span>
         <span>🥾 Petite montée, grande vue</span>
         <span>🌉 La Seine et les ponts en contrebas</span>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="step-label">D'abord</div>
-    <h2>On fait quoi&nbsp;?</h2>
-    <div class="choices" role="radiogroup" aria-label="Choix de l'activité">
-      <label class="choice">
-        <input type="radio" name="activity" value="balade" />
-        <span class="choice-card">
-          <span class="choice-emoji">🧺</span>
-          <span class="choice-text">
-            <span class="choice-name">Balade &amp; pique-nique</span>
-            <span class="choice-desc">Air frais, on marche, on papote</span>
-          </span>
-        </span>
-      </label>
-      <label class="choice">
-        <input type="radio" name="activity" value="restaurant" />
-        <span class="choice-card">
-          <span class="choice-emoji">🍽️</span>
-          <span class="choice-text">
-            <span class="choice-name">Restaurant</span>
-            <span class="choice-desc">On mange un truc bon, tranquille</span>
-          </span>
-        </span>
-      </label>
-      <label class="choice">
-        <input type="radio" name="activity" value="verre" />
-        <span class="choice-card">
-          <span class="choice-emoji">🍸</span>
-          <span class="choice-text">
-            <span class="choice-name">Un verre</span>
-            <span class="choice-desc">Simple, efficace, zéro pression</span>
-          </span>
-        </span>
-      </label>
-      <label class="choice">
-        <input type="radio" name="activity" value="cinema" />
-        <span class="choice-card">
-          <span class="choice-emoji">🎬</span>
-          <span class="choice-text">
-            <span class="choice-name">Cinéma</span>
-            <span class="choice-desc">Grand écran, popcorn, zéro blanc gênant</span>
-          </span>
-        </span>
-      </label>
-      <label class="choice">
-        <input type="radio" name="activity" value="autre" />
-        <span class="choice-card">
-          <span class="choice-emoji">✨</span>
-          <span class="choice-text">
-            <span class="choice-name">Autre idée</span>
-            <span class="choice-desc">Surprends-moi</span>
-          </span>
-        </span>
-      </label>
-      <div class="other-input" id="otherWrap">
-        <input type="text" id="otherText" placeholder="Dis-moi tout… c'est quoi ton idée ?" maxlength="80" aria-label="Ton idée d'activité" />
       </div>
     </div>
   </section>
