@@ -82,6 +82,55 @@
   }
   .lede strong { color: var(--ink); font-weight: 600; }
 
+  /* ---------- coup de cœur : le spot ---------- */
+  .spot {
+    display: block;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--surface);
+    box-shadow: 0 18px 52px -24px rgba(0, 0, 0, 0.65);
+  }
+  .spot-art { display: block; width: 100%; height: auto; }
+  .spot-body {
+    padding: 1.15rem 1.3rem 1.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+  .spot-kicker {
+    font-family: var(--ui);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--apricot);
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+  .spot-name {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 460;
+    font-size: 1.6rem;
+    line-height: 1.15;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .spot-desc { margin: 0; color: var(--muted); text-wrap: pretty; }
+  .spot-desc strong { color: var(--ink); font-weight: 600; }
+  .spot-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.95rem;
+    font-family: var(--ui);
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 0.2rem;
+  }
+  .spot-meta span { display: inline-flex; align-items: center; gap: 0.35rem; }
+
   /* ---------- sections ---------- */
   section { display: flex; flex-direction: column; gap: 0.9rem; }
 
@@ -320,6 +369,74 @@
     <h1>Bon, on se fait <span class="accent">un truc&nbsp;?</span></h1>
     <p class="lede">Pour s'éviter 50 messages de logistique&nbsp;: <strong>tu</strong> choisis ce qui te va — l'activité, le jour, l'heure — et ça m'arrive direct.</p>
   </header>
+
+  <section class="spot" aria-label="Mon idée : la Côte Sainte-Catherine, à Rouen">
+    <svg class="spot-art" viewBox="0 0 800 300" role="img" aria-label="Rouen au coucher du soleil, avec la flèche de la cathédrale qui se découpe sur le ciel">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#2A1622"/>
+          <stop offset="0.42" stop-color="#7C3A53"/>
+          <stop offset="0.72" stop-color="#E8798F"/>
+          <stop offset="1" stop-color="#F3B980"/>
+        </linearGradient>
+        <radialGradient id="sunGlow" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0" stop-color="#FFE7C4"/>
+          <stop offset="0.45" stop-color="#F7C489" stop-opacity="0.85"/>
+          <stop offset="1" stop-color="#F0B27E" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="haze" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#F3B980" stop-opacity="0"/>
+          <stop offset="1" stop-color="#F3B980" stop-opacity="0.4"/>
+        </linearGradient>
+      </defs>
+
+      <rect width="800" height="300" fill="url(#sky)"/>
+      <circle cx="500" cy="205" r="155" fill="url(#sunGlow)"/>
+      <circle cx="500" cy="205" r="44" fill="#FFE9CC"/>
+      <rect x="0" y="150" width="800" height="150" fill="url(#haze)"/>
+
+      <g stroke="#3A2130" stroke-width="2.4" stroke-linecap="round" fill="none" opacity="0.7">
+        <path d="M118,68 q9,-8 18,0 q9,-8 18,0"/>
+        <path d="M172,90 q7,-6 14,0 q7,-6 14,0"/>
+        <path d="M642,60 q8,-7 16,0 q8,-7 16,0"/>
+      </g>
+
+      <path d="M0,252 Q160,236 320,246 T640,244 T800,252 L800,300 L0,300 Z" fill="#4A2A3A" opacity="0.85"/>
+
+      <g fill="#160C11">
+        <path d="M0,300 L0,232 L34,232 L46,214 L58,232 L104,232 L104,300 Z"/>
+        <path d="M110,300 L110,238 L150,238 L162,220 L174,238 L214,238 L214,300 Z"/>
+        <path d="M220,300 L220,246 L262,246 L262,300 Z"/>
+        <rect x="268" y="228" width="40" height="72"/>
+        <polygon points="262,246 280,230 298,246"/>
+
+        <rect x="316" y="196" width="26" height="104"/>
+        <polygon points="316,196 329,176 342,196"/>
+        <rect x="404" y="196" width="26" height="104"/>
+        <polygon points="404,196 417,176 430,196"/>
+        <rect x="352" y="182" width="42" height="118"/>
+        <polygon points="373,86 366,182 380,182"/>
+        <rect x="371" y="70" width="4" height="13"/>
+        <rect x="367" y="74" width="12" height="4"/>
+
+        <path d="M436,300 L436,244 L478,244 L490,226 L502,244 L544,244 L544,300 Z"/>
+        <rect x="550" y="236" width="46" height="64"/>
+        <polygon points="544,244 573,224 602,244"/>
+        <path d="M602,300 L602,234 L642,234 L654,216 L666,234 L706,234 L706,300 Z"/>
+        <path d="M712,300 L712,240 L752,240 L764,224 L776,240 L800,240 L800,300 Z"/>
+      </g>
+    </svg>
+    <div class="spot-body">
+      <div class="spot-kicker">📍 Mon idée à moi</div>
+      <h2 class="spot-name">La Côte Sainte-Catherine</h2>
+      <p class="spot-desc">Le point de vue au-dessus de <strong>Rouen</strong>&nbsp;: toute la ville, la Seine et la flèche de la cathédrale à nos pieds. Encore mieux au coucher du soleil. Et juste après, on est à deux pas pour un verre ou un resto — <strong>comme tu préfères</strong>.</p>
+      <div class="spot-meta">
+        <span>🌇 Parfait au golden hour</span>
+        <span>🥾 Petite montée, grande vue</span>
+        <span>💸 Gratuit</span>
+      </div>
+    </div>
+  </section>
 
   <section>
     <div class="step-label">D'abord</div>
